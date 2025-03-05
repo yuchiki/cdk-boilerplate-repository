@@ -9,12 +9,15 @@ on:
 jobs:
   synth:
     name: synth
+    permissions:
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-ci-environment
       - name: synth
-        run: npx cdk synth  >synth.txt 2>&1 || true
+        run: npx cdk synth  >synth.txt 2>&1
+        continue-on-error: true
       - name: "PR comment"
         uses: marocchino/sticky-pull-request-comment@v2
         with:
