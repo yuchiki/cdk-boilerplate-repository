@@ -15,7 +15,7 @@ jobs:
       - uses: ./.github/actions/setup-ci-environment
       - name: synth
         continue-on-error: true
-        run: npx cdk synth 2> synth.txt
+        run: npx cdk synth  >synth.txt 2>&1
       - name: "PR comment"
         uses: marocchino/sticky-pull-request-comment@v2
         with:
