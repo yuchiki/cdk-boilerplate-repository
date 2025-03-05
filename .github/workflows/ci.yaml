@@ -33,6 +33,9 @@ jobs:
         run: npm run lint
   diff:
     name: diff
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
