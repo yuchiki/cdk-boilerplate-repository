@@ -15,7 +15,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": false,hhea
+    "noFallthroughCasesInSwitch": false,
     "inlineSourceMap": true,
     "inlineSources": true,
     "experimentalDecorators": true,
