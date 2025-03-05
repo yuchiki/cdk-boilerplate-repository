@@ -36,6 +36,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -46,4 +47,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_CI_ROLE_ARN }}
       - name: diff
-        run: npx cdk diff
+        run: npx cdk diff > diff.txt
+      - name: "PR comment"
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: CDK DIFF
+          path: diff.txt
