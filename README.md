@@ -10,6 +10,17 @@
 - AWS_CI_ROLE_ARN
 - AWS_DEPLOY_ROLE_ARN
 
+## 初期設定されているもの
+
+- CI workflow
+  - test (snapshot test の初期テンプレート)
+  - lint
+    - typecheck 含む
+  - cdk synth
+    - 生成時 nag による推奨プラクティスチェックも含む
+- CDK Diff の結果を PR にコメントする機能
+- CD workflow
+
 ## Welcome to your CDK TypeScript project
 
 This is a blank project for CDK development with TypeScript.
@@ -25,3 +36,4 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 - `npx cdk diff` compare deployed stack with current state
 - `npx cdk synth` emits the synthesized CloudFormation template
 - `npm run snapshot:update` snapshot test 用の snapshot test を update する
+- `npm run test-all` CI で用いているテスト項目を全て実施する

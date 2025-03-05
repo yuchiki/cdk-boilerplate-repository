@@ -11,7 +11,8 @@
     "cdk": "cdk",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "snapshot:update": "jest -u"
+    "snapshot:update": "jest -u",
+    "test-all": "npm run lint && npm run test && npx cdk synth"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
