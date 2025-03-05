@@ -1,5 +1,10 @@
 # 使い方
-このrepositoryの中の `replacehere` と `Replacehere` を好みのproject名に一括置換する
+1. このrepositoryの中の `replacehere` と `Replacehere` を好みのproject名に一括置換する
+2. AWSアカウント側で https://dev.classmethod.jp/articles/allowing-assumerole-only-for-specific-repositories-and-branches-with-oidc-collaboration-between-github-actions-and-aws/を参考にOIDCを設定する
+3. repositoryのsecretsに以下の値を設定
+  - AWS_REGION
+  - AWS_CI_ROLE_ARN
+  - AWS_DEPLOY_ROLE_ARN
 
 # Welcome to your CDK TypeScript project
 
