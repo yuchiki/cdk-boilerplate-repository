@@ -10,7 +10,8 @@
     "test": "jest",
     "cdk": "cdk",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "snapshot:update": "jest -u"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
