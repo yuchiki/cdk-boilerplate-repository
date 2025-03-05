@@ -1,0 +1,22 @@
+name: 'ci'
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: deploy
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-ci-environment
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+      - name: deploy
+        run: npx cdk deploy
