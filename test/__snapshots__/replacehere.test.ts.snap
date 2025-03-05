@@ -9,13 +9,6 @@ exports[`snapshot test 1`] = `
       "Type": "AWS::SSM::Parameter::Value<String>",
     },
   },
-  "Resources": {
-    "Bucket83908E77": {
-      "DeletionPolicy": "Delete",
-      "Type": "AWS::S3::Bucket",
-      "UpdateReplacePolicy": "Delete",
-    },
-  },
   "Rules": {
     "CheckBootstrapVersion": {
       "Assertions": [
